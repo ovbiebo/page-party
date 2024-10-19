@@ -2,26 +2,96 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer components {
+    body {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        text-rendering: optimizeLegibility;
+        margin: 0;
+        position: absolute;
+        font-synthesis: none;
+        -webkit-font-smoothing: antialiased;
+    }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+    h1 {
+        @apply text-3xl mb-6 mt-8 px-6 tracking-tight md:text-4xl font-semibold;
+    }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    h2 {
+        @apply text-2xl mb-4 mt-8 px-6 font-semibold tracking-tight md:text-3xl;
+    }
+
+    h3 {
+        @apply text-xl mb-4 mt-6 px-6 font-semibold tracking-tight md:text-2xl;
+    }
+
+    h4 {
+        @apply text-lg mb-4 mt-6 px-6 font-semibold tracking-tight md:text-xl;
+    }
+
+    h5 {
+        @apply text-base mb-4 mt-6 px-6 font-semibold tracking-tight md:text-lg;
+    }
+
+    h6 {
+        @apply text-sm mb-4 mt-6 px-6 font-semibold tracking-tight md:text-base;
+    }
+
+    ul {
+        @apply my-4 px-6 list-disc list-inside;
+    }
+
+    ol {
+        @apply my-4 px-6 list-decimal list-inside;
+    }
+
+    li {
+        @apply my-2;
+    }
+
+    input,
+    textarea,
+    select {
+        @apply relative w-full px-3 py-2 resize-none rounded-md border border-neutral-800 text-sm focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-75;
+    }
+
+    p {
+        @apply my-4 px-6;
+    }
+
+    pre {
+        @apply whitespace-pre-wrap bg-gray-500 rounded-md p-2.5;
+    }
+
+    :not(pre) > code {
+        @apply font-mono bg-neutral-200 rounded-sm;
+    }
+
+    blockquote {
+        @apply border-l-[3px] border-black text-2xl px-6 my-12 font-semibold;
+    }
+
+    .btn {
+        @apply flex gap-2 cursor-pointer items-center rounded-md bg-neutral-800 disabled:bg-neutral-300 px-8 py-2 text-white hover:bg-black focus:outline-none;
+    }
+
+    .btn-secondary {
+        @apply btn bg-white border border-neutral-800 text-neutral-800 hover:bg-neutral-100;
+    }
+
+    .btn-icon {
+        @apply flex cursor-pointer rounded-md justify-center items-center size-8 bg-white text-neutral-300 hover:border hover:border-neutral-300 focus:outline-none;
+    }
+
+    .chip {
+        @apply px-3 py-2 resize-none rounded-md border border-neutral-200 text-sm text-neutral-900 font-medium hover:bg-neutral-50 cursor-pointer whitespace-nowrap;
+    }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    .text-balance {
+        text-wrap: balance;
+    }
 }
